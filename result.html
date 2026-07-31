@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="prediction-card text-center">
+
+        <h2 class="mb-4">
+
+            Prediction Result
+
+        </h2>
+
+        <h1 class="display-4 text-success">
+
+            $ {{ prediction }}
+
+        </h1>
+
+        <p class="mt-3">
+
+            Estimated Diamond Price
+
+        </p>
+
+        <a href="/prediction" class="btn btn-primary mt-4">
+
+            Predict Another Diamond
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

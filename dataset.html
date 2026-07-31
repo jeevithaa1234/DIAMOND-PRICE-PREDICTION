@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        Diamond Dataset Information
+    </h2>
+
+    <!-- Dataset Summary -->
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card shadow text-center mb-3">
+                <div class="card-body">
+                    <h5>Total Records</h5>
+                    <h2>{{ dataset_info.rows }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center mb-3">
+                <div class="card-body">
+                    <h5>Total Columns</h5>
+                    <h2>{{ dataset_info.columns }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center mb-3">
+                <div class="card-body">
+                    <h5>Target Variable</h5>
+                    <h2>{{ dataset_info.target }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow text-center mb-3">
+                <div class="card-body">
+                    <h5>Missing Values</h5>
+                    <h2>{{ dataset_info.missing }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Dataset Description -->
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-primary text-white">
+            <h4>Dataset Description</h4>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <thead class="table-light">
+
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr><td>Carat</td><td>Weight of the diamond</td></tr>
+                    <tr><td>Cut</td><td>Quality of the diamond cut</td></tr>
+                    <tr><td>Color</td><td>Diamond color grade</td></tr>
+                    <tr><td>Clarity</td><td>Clarity grade of the diamond</td></tr>
+                    <tr><td>Depth</td><td>Total depth percentage</td></tr>
+                    <tr><td>Table</td><td>Width of the top facet</td></tr>
+                    <tr><td>X</td><td>Length (mm)</td></tr>
+                    <tr><td>Y</td><td>Width (mm)</td></tr>
+                    <tr><td>Z</td><td>Depth (mm)</td></tr>
+                    <tr><td>Price</td><td>Target variable (diamond price)</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Dataset Preview -->
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-success text-white">
+            <h4>Dataset Preview (First 10 Records)</h4>
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-bordered table-striped">
+
+                <thead>
+
+                    <tr>
+
+                        {% for col in columns %}
+                            <th>{{ col }}</th>
+                        {% endfor %}
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for row in preview %}
+
+                    <tr>
+
+                        {% for col in columns %}
+                            <td>{{ row[col] }}</td>
+                        {% endfor %}
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

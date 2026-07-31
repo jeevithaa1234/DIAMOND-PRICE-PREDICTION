@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Report{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Prediction Report</h2>
+        </div>
+
+        <div class="card-body">
+
+            {% if prediction %}
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>Prediction Date</th>
+                            <td>{{ prediction.prediction_date }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>User Email</th>
+                            <td>{{ prediction.user_email }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Carat</th>
+                            <td>{{ prediction.carat }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Cut</th>
+                            <td>{{ prediction.cut }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Color</th>
+                            <td>{{ prediction.color }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Clarity</th>
+                            <td>{{ prediction.clarity }}</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>Depth</th>
+                            <td>{{ prediction.depth }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Table</th>
+                            <td>{{ prediction.table_value }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>X</th>
+                            <td>{{ prediction.x }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Y</th>
+                            <td>{{ prediction.y }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Z</th>
+                            <td>{{ prediction.z }}</td>
+                        </tr>
+
+                        <tr class="table-success">
+                            <th>Predicted Price</th>
+                            <td><strong>${{ prediction.predicted_price }}</strong></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="alert alert-info mt-4">
+
+                <strong>Model Used:</strong> Random Forest Regressor
+                <br>
+                <strong>R² Score:</strong> 97.09%
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <button class="btn btn-success btn-lg" disabled>
+                    📄 Download PDF (Coming Soon)
+                </button>
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-warning text-center">
+
+                <h4>No prediction history found.</h4>
+
+                <a href="{{ url_for('prediction') }}"
+                   class="btn btn-primary mt-3">
+
+                    Make Your First Prediction
+
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

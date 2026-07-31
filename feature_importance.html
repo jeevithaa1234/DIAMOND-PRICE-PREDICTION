@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Feature Importance{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4 fw-bold">
+        Feature Importance
+    </h2>
+
+    <!-- Feature Importance Chart -->
+    <div class="card shadow border-0 mb-5">
+
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Feature Importance Graph</h4>
+        </div>
+
+        <div class="card-body">
+
+            <canvas id="importanceChart" height="120"></canvas>
+
+            <!-- Hidden Data for JavaScript -->
+            <div id="feature-data"
+                 data-labels='{{ labels | tojson }}'
+                 data-values='{{ values | tojson }}'
+                 hidden>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Feature Ranking Table -->
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Feature Ranking</h4>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-striped table-hover table-bordered align-middle text-center">
+
+                <thead class="table-primary">
+
+                    <tr>
+                        <th width="10%">Rank</th>
+                        <th width="45%">Feature</th>
+                        <th width="45%">Importance Score</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for feature, value in feature_data %}
+
+                    <tr>
+
+                        <td>
+                            <strong>{{ loop.index }}</strong>
+                        </td>
+
+                        <td>
+                            {{ feature }}
+                        </td>
+
+                        <td>
+                            {{ "%.4f"|format(value) }}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="{{ url_for('static', filename='js/feature_importance.js') }}"></script>
+
+{% endblock %}

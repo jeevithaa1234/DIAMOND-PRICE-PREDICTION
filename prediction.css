@@ -1,0 +1,46 @@
+.prediction-card{
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.prediction-card h2{
+
+    color:#334155;
+
+    font-weight:700;
+
+}
+
+.prediction-card label{
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.form-control,
+.form-select{
+
+    border-radius:10px;
+
+    padding:10px;
+
+}
+
+.btn-primary{
+
+    padding:12px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}

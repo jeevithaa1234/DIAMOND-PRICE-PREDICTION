@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-5">
+        Frequently Asked Questions
+    </h2>
+
+    <div class="accordion" id="faqAccordion">
+
+        <!-- Question 1 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+
+                    What is Diamond Price Prediction?
+
+                </button>
+
+            </h2>
+
+            <div id="faq1"
+                 class="accordion-collapse collapse show"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    This system predicts the estimated price of a diamond using a Machine Learning model based on its physical characteristics.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 2 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+
+                    Which Machine Learning algorithm is used?
+
+                </button>
+
+            </h2>
+
+            <div id="faq2"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    This project uses the <strong>Random Forest Regressor</strong> algorithm to predict diamond prices.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 3 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
+
+                    Which dataset is used?
+
+                </button>
+
+            </h2>
+
+            <div id="faq3"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    The application uses the Kaggle Diamond Price Dataset containing approximately 53,940 records.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 4 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4">
+
+                    Which features are used for prediction?
+
+                </button>
+
+            </h2>
+
+            <div id="faq4"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    Carat, Cut, Color, Clarity, Depth, Table, X, Y and Z.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 5 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq5">
+
+                    How accurate is the model?
+
+                </button>
+
+            </h2>
+
+            <div id="faq5"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    The Random Forest Regressor achieved an R² Score of approximately <strong>97.09%</strong>.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Question 6 -->
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq6">
+
+                    Can I compare two diamonds?
+
+                </button>
+
+            </h2>
+
+            <div id="faq6"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#faqAccordion">
+
+                <div class="accordion-body">
+
+                    Yes. The Compare Diamonds feature allows you to compare the predicted prices of two diamonds side by side.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

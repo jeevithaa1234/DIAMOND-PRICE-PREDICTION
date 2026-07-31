@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block title %}Compare Diamonds{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Compare Two Diamonds</h2>
+
+    <form method="POST">
+
+        <div class="row">
+
+            <!-- Diamond 1 -->
+            <div class="col-md-6">
+
+                <div class="card shadow mb-4">
+
+                    <div class="card-header bg-primary text-white">
+                        <h4>Diamond 1</h4>
+                    </div>
+
+                    <div class="card-body">
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="carat1" placeholder="Carat" required>
+
+                        <select class="form-select mb-3" name="cut1">
+                            <option>Fair</option>
+                            <option>Good</option>
+                            <option>Ideal</option>
+                            <option>Premium</option>
+                            <option>Very Good</option>
+                        </select>
+
+                        <select class="form-select mb-3" name="color1">
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                            <option>H</option>
+                            <option>I</option>
+                            <option>J</option>
+                        </select>
+
+                        <select class="form-select mb-3" name="clarity1">
+                            <option>I1</option>
+                            <option>IF</option>
+                            <option>SI1</option>
+                            <option>SI2</option>
+                            <option>VS1</option>
+                            <option>VS2</option>
+                            <option>VVS1</option>
+                            <option>VVS2</option>
+                        </select>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="depth1" placeholder="Depth" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="table1" placeholder="Table" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="x1" placeholder="Length (X)" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="y1" placeholder="Width (Y)" required>
+
+                        <input class="form-control" type="number" step="0.01" name="z1" placeholder="Height (Z)" required>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Diamond 2 -->
+            <div class="col-md-6">
+
+                <div class="card shadow mb-4">
+
+                    <div class="card-header bg-success text-white">
+                        <h4>Diamond 2</h4>
+                    </div>
+
+                    <div class="card-body">
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="carat2" placeholder="Carat" required>
+
+                        <select class="form-select mb-3" name="cut2">
+                            <option>Fair</option>
+                            <option>Good</option>
+                            <option>Ideal</option>
+                            <option>Premium</option>
+                            <option>Very Good</option>
+                        </select>
+
+                        <select class="form-select mb-3" name="color2">
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                            <option>H</option>
+                            <option>I</option>
+                            <option>J</option>
+                        </select>
+
+                        <select class="form-select mb-3" name="clarity2">
+                            <option>I1</option>
+                            <option>IF</option>
+                            <option>SI1</option>
+                            <option>SI2</option>
+                            <option>VS1</option>
+                            <option>VS2</option>
+                            <option>VVS1</option>
+                            <option>VVS2</option>
+                        </select>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="depth2" placeholder="Depth" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="table2" placeholder="Table" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="x2" placeholder="Length (X)" required>
+
+                        <input class="form-control mb-3" type="number" step="0.01" name="y2" placeholder="Width (Y)" required>
+
+                        <input class="form-control" type="number" step="0.01" name="z2" placeholder="Height (Z)" required>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center">
+
+            <button class="btn btn-primary btn-lg px-5" type="submit">
+                Compare Diamonds
+            </button>
+
+        </div>
+
+    </form>
+
+    {% if result %}
+
+    <div class="row mt-5">
+
+        <div class="col-md-6">
+
+            <div class="card text-center border-primary shadow">
+
+                <div class="card-body">
+
+                    <h4>Diamond 1 Price</h4>
+
+                    <h2 class="text-primary">
+                        ${{ result.price1 }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card text-center border-success shadow">
+
+                <div class="card-body">
+
+                    <h4>Diamond 2 Price</h4>
+
+                    <h2 class="text-success">
+                        ${{ result.price2 }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-info text-center mt-4">
+
+        <h4>🏆 {{ result.better }} is predicted to be more valuable.</h4>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

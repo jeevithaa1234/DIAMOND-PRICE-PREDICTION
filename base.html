@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Diamond Price Prediction{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top shadow-sm">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+
+                <span class="logo-text ms-2">
+                    Diamond Price Prediction
+                </span>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Navbar -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <!-- Prediction Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fa-solid fa-gem"></i>
+                            Prediction
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('prediction') }}">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    Predict Price
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('compare') }}">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                    Compare Diamonds
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('history') }}">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                    Prediction History
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('report') }}">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                    Prediction Report
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <!-- Analytics Dropdown -->
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fa-solid fa-chart-column"></i>
+                            Analytics
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('statistics') }}">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                    Statistics
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('model_performance') }}">
+                                    <i class="fa-solid fa-robot"></i>
+                                    Model Performance
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('feature_importance') }}">
+                                    <i class="fa-solid fa-ranking-star"></i>
+                                    Feature Importance
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('dataset') }}">
+                                    <i class="fa-solid fa-database"></i>
+                                    Dataset
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <!-- Support Dropdown -->
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fa-solid fa-headset"></i>
+                            Support
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('contact') }}">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Contact
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('faq') }}">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    FAQ
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('feedback') }}">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                    Feedback
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <!-- Profile Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            {% if session.get('user') %}
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('profile') }}">
+                                    <i class="fa-solid fa-user-circle"></i>
+                                    My Profile
+                                </a>
+                            </li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('logout') }}">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    Logout
+                                </a>
+                            </li>
+
+                            {% else %}
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('login') }}">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    Login
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('register') }}">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    Register
+                                </a>
+                            </li>
+
+                            {% endif %}
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+                <!-- Right Side -->
+
+                {% if session.get('user') %}
+
+                <div class="d-flex align-items-center">
+
+                    <span class="me-3 fw-semibold">
+
+                        <i class="fa-solid fa-user-circle"></i>
+
+                        {{ session['user'] }}
+
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <div class="container my-5">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer bg-dark text-white py-4 mt-5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Project -->
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        <i class="fa-solid fa-gem text-info"></i>
+                        Diamond Price Prediction
+                    </h5>
+
+                    <p class="mb-0">
+                        A Machine Learning based web application for predicting
+                        diamond prices using the Random Forest Regression algorithm.
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+
+                    <h5>Quick Links</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a href="{{ url_for('home') }}" class="text-white text-decoration-none">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('prediction') }}" class="text-white text-decoration-none">
+                                Prediction
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('statistics') }}" class="text-white text-decoration-none">
+                                Statistics
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('contact') }}" class="text-white text-decoration-none">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4">
+
+                    <h5>Project Information</h5>
+
+                    <p class="mb-1">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Final Year Project
+                    </p>
+
+                    <p class="mb-1">
+                        <i class="fa-solid fa-code"></i>
+                        Flask + Machine Learning
+                    </p>
+
+                    <p class="mb-0">
+                        <i class="fa-solid fa-copyright"></i>
+                        2026 All Rights Reserved
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr class="border-light">
+
+            <div class="text-center">
+
+                Developed by <strong>{{ session.get('user','Student') }}</strong>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+
+</html>

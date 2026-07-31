@@ -1,0 +1,614 @@
+/* ==============================
+   Google Font
+============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==============================
+   Body
+============================== */
+
+body{
+    background:#F8FAFC;
+    color:#334155;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==============================
+   Navbar
+============================== */
+
+.custom-navbar{
+
+    background:#ffffff;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+.navbar-brand{
+
+    font-size:24px;
+
+    color:#334155 !important;
+
+    font-weight:600;
+
+}
+
+.nav-link{
+
+    color:#475569 !important;
+
+    margin-left:15px;
+
+    transition:0.3s;
+
+    font-weight:500;
+
+}
+
+.nav-link:hover{
+
+    color:#7DD3FC !important;
+
+}
+
+/* ==============================
+   Buttons
+============================== */
+
+.btn-login{
+
+    background:#7DD3FC;
+
+    color:#334155;
+
+    border-radius:8px;
+
+    padding:8px 20px;
+
+    margin-right:8px;
+
+    transition:0.3s;
+
+}
+
+.btn-login:hover{
+
+    background:#BAE6FD;
+
+}
+
+.btn-register{
+
+    background:#7DD3FC;
+
+    color:#334155;
+
+    border-radius:8px;
+
+    padding:8px 20px;
+
+    transition:0.3s;
+
+}
+
+.btn-register:hover{
+
+    background:#BAE6FD;
+
+}
+
+.btn-primary-custom{
+
+    background:#7DD3FC;
+
+    color:#334155;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.btn-primary-custom:hover{
+
+    background:#BAE6FD;
+
+    color:#334155;
+
+}
+
+/* ==============================
+   Hero Section
+============================== */
+
+.hero{
+
+    padding:80px 0;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    color:#64748B;
+
+    margin-top:20px;
+
+}
+
+/* ==============================
+   Cards
+============================== */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ==============================
+   Forms
+============================== */
+
+.form-control{
+
+    border-radius:10px;
+
+    border:1px solid #CBD5E1;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    border-color:#7DD3FC;
+
+    box-shadow:0 0 10px rgba(125,211,252,.3);
+
+}
+
+/* ==============================
+   Tables
+============================== */
+
+table{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+/* ==============================
+   Footer
+============================== */
+
+.footer{
+
+    margin-top:auto;
+
+    background:#ffffff;
+
+    border-top:1px solid #E2E8F0;
+
+    padding:30px;
+
+}
+
+.footer p{
+
+    color:#64748B;
+
+    margin-bottom:5px;
+
+}
+
+/* ==============================
+   Section Title
+============================== */
+
+.section-title{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+/* ==============================
+   Responsive
+============================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.nav-link{
+
+margin-left:0;
+
+}
+
+.btn-login,.btn-register{
+
+margin-top:10px;
+
+display:block;
+
+width:100%;
+
+}
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.navbar-brand img{
+
+    object-fit:contain;
+
+}
+
+/* ===========================
+   Hero Image
+=========================== */
+
+.hero-image{
+
+    width:100%;
+
+    max-width:450px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+/* ===============================
+   Custom Text Color
+================================ */
+
+.text-primary-custom{
+    color:#7DD3FC;
+}
+
+/* ===============================
+   Outline Button
+================================ */
+
+.btn-outline-custom{
+
+    border:2px solid #7DD3FC;
+
+    color:#334155;
+
+    border-radius:10px;
+
+    padding:12px 28px;
+
+    transition:.3s;
+
+}
+
+.btn-outline-custom:hover{
+
+    background:#BAE6FD;
+
+}
+
+/* ===============================
+   Feature Cards
+================================ */
+
+.feature-card{
+
+    height:100%;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+.feature-card h1{
+
+    font-size:55px;
+
+}
+
+/* ===============================
+   Statistics
+================================ */
+
+.stats-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stats-card h2{
+
+    color:#7DD3FC;
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+/* ===============================
+   CTA
+================================ */
+
+.cta-section{
+
+    background:white;
+
+    padding:70px 20px;
+
+    border-radius:20px;
+
+    margin-top:50px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+/*==========================
+Feature Icons
+==========================*/
+
+.feature-icon{
+
+    font-size:55px;
+
+    color:#7DD3FC;
+
+    margin-bottom:20px;
+
+    transition:.4s;
+
+}
+
+.feature-card:hover .feature-icon{
+
+    transform:rotate(10deg) scale(1.15);
+
+}
+/*======================================
+Professional Navbar
+======================================*/
+
+.custom-navbar{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #E2E8F0;
+
+    padding:12px 0;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+}
+
+.logo{
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:contain;
+
+}
+
+.logo-text{
+
+    margin-left:10px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#334155;
+
+}
+
+.navbar-nav .nav-item{
+
+    margin:0 8px;
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    font-weight:500;
+
+    color:#475569 !important;
+
+    transition:.3s;
+
+}
+
+.nav-link i{
+
+    color:#7DD3FC;
+
+    margin-right:6px;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-4px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:10px;
+
+    background:#7DD3FC;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-link:hover{
+
+    color:#334155 !important;
+
+}
+
+.btn-login,
+.btn-register{
+
+    border-radius:30px;
+
+    padding:10px 24px;
+
+    font-weight:600;
+
+}
+
+.btn-login{
+
+    background:#7DD3FC;
+
+    color:#334155;
+
+}
+
+.btn-login:hover{
+
+    background:#BAE6FD;
+
+}
+
+.btn-register{
+
+    background:white;
+
+    border:2px solid #7DD3FC;
+
+    color:#334155;
+
+}
+
+.btn-register:hover{
+
+    background:#BAE6FD;
+
+}
+
+.navbar-toggler{
+
+    border:none;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}

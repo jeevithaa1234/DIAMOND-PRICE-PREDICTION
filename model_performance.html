@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Model Performance{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        Model Performance
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5>R² Score</h5>
+                    <h2 class="text-success">
+                        {{ metrics.r2 }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5>MAE</h5>
+                    <h2>{{ metrics.mae }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5>MSE</h5>
+                    <h2>{{ metrics.mse }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5>RMSE</h5>
+                    <h2>{{ metrics.rmse }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-4">
+        <div class="card-body">
+
+            <h4>Model Information</h4>
+
+            <table class="table table-bordered mt-3">
+
+                <tr>
+                    <th>Algorithm</th>
+                    <td>{{ metrics.model }}</td>
+                </tr>
+
+                <tr>
+                    <th>Training Accuracy (R²)</th>
+                    <td>{{ metrics.r2 }}</td>
+                </tr>
+
+                <tr>
+                    <th>Mean Absolute Error</th>
+                    <td>{{ metrics.mae }}</td>
+                </tr>
+
+                <tr>
+                    <th>Mean Squared Error</th>
+                    <td>{{ metrics.mse }}</td>
+                </tr>
+
+                <tr>
+                    <th>Root Mean Squared Error</th>
+                    <td>{{ metrics.rmse }}</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

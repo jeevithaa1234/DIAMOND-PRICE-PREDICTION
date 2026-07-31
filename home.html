@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Diamond Price Prediction{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="display-4 fw-bold mb-4">
+                    Predict Diamond Prices with
+                    <span class="text-primary-custom">Machine Learning</span>
+                </h1>
+
+                <p class="lead mb-4">
+
+                    Get fast and accurate diamond price predictions by entering
+                    the diamond characteristics. Our Machine Learning model
+                    analyzes the features and estimates the market price
+                    instantly.
+
+                </p>
+
+                <a href="/prediction" class="btn btn-primary-custom btn-lg me-3">
+                    Predict Price
+                </a>
+
+                <a href="/about" class="btn btn-outline-custom btn-lg">
+                    Learn More
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{{ url_for('static', filename='images/diamond.png') }}"
+                     class="img-fluid hero-image"
+                     alt="Diamond">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            Why Choose Our System?
+        </h2>
+
+        <div class="row mt-5">
+
+            <div class="col-md-3">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="fa-solid fa-gem feature-icon"></i>
+
+                        <h5>High Accuracy</h5>
+
+                        <p>
+                            Predicts diamond prices using a trained Machine Learning model.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="fa-solid fa-bolt feature-icon"></i>
+
+                        <h5>Fast Prediction</h5>
+
+                        <p>
+                            Get the estimated diamond price instantly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="fa-solid fa-shield-halved feature-icon"></i>
+
+                        <h5>Secure</h5>
+
+                        <p>
+                            User accounts and prediction history are stored securely.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card feature-card">
+
+                    <div class="card-body text-center">
+
+                        <i class="fa-solid fa-chart-line feature-icon"></i>
+
+                        <h5>History</h5>
+
+                        <p>
+                            View all your previous predictions anytime.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="py-5 bg-light rounded-4">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            How It Works
+        </h2>
+
+        <div class="row text-center mt-5">
+
+            <div class="col-md-4">
+
+                <h1>①</h1>
+
+                <h5>Enter Details</h5>
+
+                <p>
+
+                    Fill in the diamond features like Carat, Cut, Color,
+                    Clarity, Depth and Dimensions.
+
+                </p>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h1>②</h1>
+
+                <h5>ML Model Prediction</h5>
+
+                <p>
+
+                    The trained Machine Learning model processes the input.
+
+                </p>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h1>③</h1>
+
+                <h5>View Result</h5>
+
+                <p>
+
+                    Instantly receive the predicted market price.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DATASET ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            Dataset Overview
+        </h2>
+
+        <div class="row mt-5">
+
+            <div class="col-md-3">
+
+                <div class="stats-card">
+
+                    <h2>53,940+</h2>
+
+                    <p>Dataset Records</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stats-card">
+
+                    <h2>10</h2>
+
+                    <p>Input Features</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stats-card">
+
+                    <h2>1</h2>
+
+                    <p>Target Variable</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stats-card">
+
+                    <h2>24/7</h2>
+
+                    <p>Prediction Access</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="container text-center">
+
+        <h2 class="mb-3">
+
+            Ready to Predict Your Diamond Price?
+
+        </h2>
+
+        <p class="mb-4">
+
+            Start predicting now with our Machine Learning powered application.
+
+        </p>
+
+        <a href="/prediction" class="btn btn-primary-custom btn-lg">
+
+            Get Started
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

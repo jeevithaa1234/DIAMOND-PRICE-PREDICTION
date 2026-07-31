@@ -1,0 +1,67 @@
+.login-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-top:40px;
+
+}
+
+.login-card h2{
+
+    color:#334155;
+
+    font-weight:700;
+
+}
+
+.login-card p{
+
+    color:#64748B;
+
+}
+
+.btn-register-page{
+
+    background:#7DD3FC;
+
+    border:none;
+
+    color:#334155;
+
+    font-weight:600;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.btn-register-page:hover{
+
+    background:#BAE6FD;
+
+}
+
+.login-card a{
+
+    color:#7DD3FC;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.login-card a:hover{
+
+    color:#38BDF8;
+
+}
